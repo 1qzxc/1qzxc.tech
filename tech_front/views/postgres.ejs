@@ -1,0 +1,125 @@
+<%- include('./partials/_head'); %>
+  <body class="d-flex flex-column min-vh-100">
+  <%- include('./partials/_nav'); %>
+
+
+<!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4"> Postgres replication </h1>
+
+        <hr>
+	<p class="lead"> Being DevOps requires you to have an expertise as a Database Administrator (DBA). For that reason I started a project where I had to implement Postgres database replication. It has proven to be not as easy as I anticipated. Postgres documentation has indepth info about bits and pieces of Postgres administration, however there was no straight forward guide that explained how to do a certain thin from the beginning to the end. </p>
+
+	<h2> Environment </h2>
+
+        <p class="lead"> For this task I used a ready-made vagrant box for python development that already has a plenty of databases installed inside. The repo: <p>
+
+        <ul>
+		<li> https://github.com/wharton/python-vagrant-centos7 </li>
+	</ul>
+
+        <p class="lead"> I made two identical vagrant repos with only difference being the hostnames and folder names. They are bridged to my home 192.168.1.0/24 LAN which they use to replicate the database one to another. </p>
+
+        <img class="img-fluid rounded" src="vagrant-postgres.png" alt="">
+       <hr>
+
+        <img class="img-fluid rounded" src="vagrantboxes.png" alt="">
+
+       <hr>
+        <p class="lead"> The database is located in regular folder with distinct permissions, that is only postgres user has access to it and a root. Config files describe the database handling for postgres. </p>
+
+
+        <img class="img-fluid rounded" src="slave_database.png" alt="">
+
+       <hr>
+
+
+       <p class="lead"> Write ahead log (WAL) is the mechanism for database replication in postgres. Before changes are applied to the database, they are logged ahead, hence the name. This config manipulates the WAL. In this instance I configured master to have the max of 8 connections. </p>
+
+       <img class="img-fluid rounded" src="slave_wal_senders.png" alt="">
+
+       <hr>
+
+       <p class="lead"> Here I configure the whitelist for database connections. From another hosts, that be slaves. <p>
+
+	<img class="img-fluid rounded" src="pg_hba.png" alt="">
+
+
+       <hr>
+
+
+       <p class="lead"> There are three modes for database replication, hot-standby, replica, streaming. <a href=https://dba.stackexchange.com/questions/185696/postgresql-hot-standby-vs-streaming>From stack overflow:</a> "Hot Standby" is the state the replica is in and means it is available for read-only queries. A replica can also "just" be a standby, but then it does not allow queries, it just sits there and waits to take over.
+
+A replica needs to have exactly the same data as the master and the way the data is sent from the master to the replica is what "streaming replication" refers to.
+
+A hot standby can also be setup using log shipping (sometimes also referred to as "continuous WAL archiving") or even streaming replication together with log shipping. n standby mode, the server continuously applies WAL received from the master server. The standby server can read WAL from a WAL archive or directly from the master over a TCP connection (streaming replication). </p>
+	<img class="img-fluid rounded" src="wal_mode.png" alt="">
+
+
+
+        <hr>
+
+
+	<p class="lead"> It wasn't particularly easy to figure replication for postgres. I used a lot of references. </p>
+
+
+
+
+      	<hr>
+
+        <img class="img-fluid rounded" src="postgrestrello.png" alt="">
+        <hr>
+
+
+        <p class="lead"> Here's the full list of references: </p>
+
+
+        <ul>
+		<li> https://github.com/wharton/python-vagrant-centos7 </li>
+		<li> https://medium.com/@perwagnernielsen/vagrant-ansible-and-postgresql-10-398e1e472349 </li>
+                <li> https://www.postgresql.org/files/documentation/pdf/12/postgresql-12-A4.pdf </li>
+                <li> https://wiki.dieg.info/rezervnoe_kopirovanie_i_vosstanovlenie_v_postgresql </li>
+                <li> https://cloud.google.com/community/tutorials/setting-up-postgres-hot-standby </li>
+                <li> https://severalnines.com/database-blog/postgresql-replication-setup-maintenance-using-ansible </li>
+                <li> https://www.postgresql.fastware.com/blog/where-and-how-is-your-data-actually-stored-on-disk </li>
+                <li> https://www.opsdash.com/blog/postgresql-wal-archiving-backup.html </li>
+                <li> https://www.opsdash.com/blog/postgresql-streaming-replication-howto.html </li>
+                <li> http://www.postgresqltutorial.com/ </li>
+                <li> https://www.linode.com/docs/databases/postgresql/how-to-install-postgresql-relational-databases-on-centos-7/ </li>
+                <li> https://youtube.com/watch?v=5BeC1aD4z8E </li>
+                <li> https://estl.tech/replication-and-failover-in-postgresql-5ad68704d834 </li>
+                <li> http://philipmcclarence.com/setting-up-a-postgres-test-cluster-in-vagrant/ </li>
+                <li> https://wiki.postgresql.org/wiki/PostgreSQL_For_Development_With_Vagrant </li>
+                <li> https://www.howtoforge.com/tutorial/postgresql-replication-on-ubuntu-15-04/ </li>
+                <li> https://portworx.com/postgres-kubernetes/ </li>
+                <li> https://medium.com/@singh.umesh30/best-30-postgresql-interview-questions-and-answers-2019-5de922b4b298 </li>
+                <li> https://www.postgresql.org/docs/10/tutorial.html </li>
+                <li> https://www.onlineinterviewquestions.com/postgresql-interview-questions/ </li>
+                <li> https://www.zeolearn.com/interview-questions/postgres </li>
+                <li> https://www.2ndquadrant.com/en/blog/managing-postgresql-devops-environment/ </li>
+                <li> https://medium.com/mrx-technical-journey/devops-postgres-part-1-97d7111e3ca1 </li>
+                <li> https://www.oreilly.com/library/view/postgresql-9-administration/9781849510288/ </li>
+                <li> https://momjian.us/main/writings/pgsql/administration.pdf </li>
+                <li> http://www.postgresqltutorial.com/what-is-postgresql/ </li>
+
+
+	</ul>
+        <hr>
+<br>
+
+</div>
+</div>
+</div>
+
+        <%- include('./partials/_footer'); %>
+      </body>
+      <%- include('./partials/_end'); %>
+      
+      

@@ -1,2 +1,3 @@
-# 1qzxc.tech
-professional blog based on strapi expressjs bootstrap
+# http://morozovme.com
+
+## webpage with my stuff

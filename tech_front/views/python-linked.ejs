@@ -1,0 +1,62 @@
+<%- include('./partials/_head'); %>
+  <body class="d-flex flex-column min-vh-100">
+  <%- include('./partials/_nav'); %>
+
+
+
+
+<!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4">Python Linked List</h1>
+
+
+        <p class="lead">  <a href="https://github.com/mikefrostov/task_python2/tree/master/mylist"> Repository </a>  </p>
+
+        <hr>
+
+        <p class="lead"> This is a job interview task. The task is to implement a linked list using only python core functions and primitives. Also unit tests should be implemented for this linked list. </p>
+
+	<p class="lead"> List has an init method, append method, constructor, print function. It has magic 'add' method. List consists of nodes, each node holds a value and a pointer. </p>
+        <img class="img-fluid rounded" src="pythonlinkedlist.png" alt="">
+
+        
+	<hr>
+        
+	<p class="lead"> I have implemented an iterator too, so the list may be iterated just as any iterable written in python. </p>
+
+	<img class="img-fluid rounded" src="pythonlistiterable.png" alt="">
+
+	<hr>
+        
+        <p class="lead"> Iteration is possible thanks to magic dunder methods, that python uses, whenever you try to iterate your class. This is what's called 'pythonic' way of doing things.  </p>
+
+	<img class="img-fluid rounded" src="pythonlistiterate.png" alt="">
+
+	<hr>
+
+        <p class="lead"> Unit tests help to have the class that is consistent with the base functionality that is required. When implementing the tests, it helps to conceptually visualize the working of the class under test. </p>
+
+	<img class="img-fluid rounded" src="listtestsrun.png" alt="">
+
+        <hr>
+        
+	<p class="lead"> Context manager takes the stdout that MyList class outputs after operation and checks that is what it's supposed to be. This way we that it works properly (or not).  </p>
+	<img class="img-fluid rounded" src="listunittests.png" alt="">
+
+
+</div>
+</div>
+</div>
+
+        <%- include('./partials/_footer'); %>
+      </body>
+      <%- include('./partials/_end'); %>
+      
+      

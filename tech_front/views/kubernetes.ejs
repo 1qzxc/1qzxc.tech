@@ -1,0 +1,44 @@
+<%- include('./partials/_head'); %>
+<body class="d-flex flex-column min-vh-100">
+<%- include('./partials/_nav'); %>
+
+
+
+
+<!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4"> Kubernetes </h1>
+
+	<h2>  <a href="https://github.com/mikefrostov/vagrant-virtualbox-ansible-kubernetes"> Repository </a> </h2>
+
+        <hr>
+        <p class="lead"> Using examples on the github I have set up my easily scallable, constistent kubernetes cluster that could be brung up in the matters of minutes using Vagrant, Virtualbox Ansible</p>
+
+
+        <img class="img-fluid rounded" src="kubernetes1.png" alt="">
+
+        <hr>
+
+        <img class="img-fluid rounded" src="kubernetes2.png" alt="">
+
+        <hr>
+
+	<p class="lead"> Cluster is provisioned using Ansible. The playbook installs kubernetes using kubeadm and also applies Calico CNI config so the network works as soon as cluster is up. </p>
+
+        <hr>
+
+
+      </div>
+    </div>
+    </div>
+    
+        <%- include('./partials/_footer'); %>
+      </body>
+      <%- include('./partials/_end'); %>

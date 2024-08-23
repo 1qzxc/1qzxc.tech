@@ -1,0 +1,53 @@
+
+<%- include('./partials/_head'); %>
+<body class="d-flex flex-column min-vh-100">
+<%- include('./partials/_nav'); %>
+
+
+
+<!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4">Home lab</h1>
+
+
+        <hr>
+
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="home-lab.jpeg" style="width:470px;height:800px;" alt="">
+
+
+        <!-- Post Content -->
+	<p class="lead">I use three personal computers for my devops tryouts. </p>
+	<p class="lead"> 1) An old laptop with Core2Duo onboard is used as a 24/7 low power (45watt) server. It runs Docker engine with containers that host my apps with jenkins and grafana and other stuff. Ubuntu 16 is run in this machine as the most stable for these outdated platforms </p>
+
+	<p class="lead"> 2) Another PC ATX-formfactor, the one with drawing on the side, has amd6350 onboard and is used as a compute node. It has 24gb RAM and two GPUs in it, makes it great for virtualization and GPU passtrhough experiments. Centos 7 is installed with virtualization provided by VirtualBox (or sometimes KVM, I use either of those). Vagrant is used for starting up a multiple of tools like Kubernetes, hadoop cluster, ELK and others for studies. </p>
+
+        <p class="lead"> 3) For the third pc I cramed in mini-itx board with an integrated amde-2000 cpu and 5 harddrives, I use it as a samba server and a ftp server. </p>
+        <hr>
+
+
+
+
+        <p class="lead"> For infrastructure planning and management I use miro (ex-realtimeboard). This helps to have a concise map in my head, so its easier to come up with new ideas on what to add.  </p>
+
+                <img class="img-fluid rounded" src="miro_infrastructure.png" style="width:1000px;height:470px;" alt="">
+
+        <hr>
+
+
+
+      </div>
+    </div>
+    </div>
+    
+        <%- include('./partials/_footer'); %>
+      </body>
+      <%- include('./partials/_end'); %>

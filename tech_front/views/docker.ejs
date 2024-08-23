@@ -1,0 +1,49 @@
+<%- include('./partials/_head'); %>
+<body class="d-flex flex-column min-vh-100">
+<%- include('./partials/_nav'); %>
+
+
+
+<!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4"> Docker </h1>
+        <hr>
+        <p class="lead"> Docker for DevOps is bread and butter. I have been using it extensively throughout my career. Right now I contatinerize all my apps and projects so they could run 24/7 on one PC with no hassle. </p>
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="containers1.png" style="width:1200px;height:110px;" alt="">
+	<br>
+	<hr>
+        <p class="lead"> I upped docker container with a reverse proxy that manages all incoming connections and distributes them with respected ports. Each container lives on it's own port. Grafana is served on 3000, web apps are served on ports starting 8080. </p>
+
+        <hr>
+
+        <p class="lead"> I use docker as an engine for Kubernetes orchestration cluster system. Sometimes the expertise with docker engine really helps troubleshooting kubernetes problems with pods. </p>
+	<img class="img-fluid rounded" src="kubernetes2.png" style="width:800px;height:500px;" alt="">
+
+        <!-- Post Content -->
+
+        <hr>
+
+        <p class="lead"> Sometimes I use docker-compose for web apps that I work on. This tool helps quickly setup the environment for development. I may spin up a database or a monitoring tool such as prometheus or grafana or whatever is necessery. </p>
+
+	<img class="img-fluid rounded" src="nodejs_blogapp.png" style="width:800px;height:400px;" alt="">
+
+	<hr>
+        
+	<img class="img-fluid rounded" src="docker-compose.png" style="width:700px;height:400px;" alt="">
+
+</div>
+</div>
+</div>
+
+    <%- include('./partials/_footer'); %>
+  </body>
+  <%- include('./partials/_end'); %>

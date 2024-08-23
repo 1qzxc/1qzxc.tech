@@ -1,0 +1,26 @@
+<%- include('./partials/_head'); %>
+
+  <!-- old body: 
+  <body>
+    <h1>This is index page!</h1>
+    <a> hey </a>
+  </body>
+  --> 
+  <!-- new body with ejs: -->
+  <body>
+  <%- include('./partials/_nav'); %>
+    <!-- Page content-->
+    
+      <div class="container mt-5">
+        <div class="row">
+          <%- include('./partials/_articles'); %>
+          <%- include('./partials/_widgets'); %>
+        </div>
+        
+      </div>
+      <%- include('./partials/_footer'); %>
+
+  </body>
+  <%- include('./partials/_end'); %>
+
+

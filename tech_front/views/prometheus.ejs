@@ -1,0 +1,71 @@
+<%- include('./partials/_head'); %>
+  <body class="d-flex flex-column min-vh-100">
+  <%- include('./partials/_nav'); %>
+
+
+<!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4"> Prometheus infrastructure metrics </h1>
+
+
+        <hr>
+
+	<p class="lead"> Prometheus is a highly capable monitoring tool that assembles metrics and pushes them to a consumer. It may be used for just about anything you could think of. It has quite big community that develops exporters for a number of projects. Nodejs, php, linux machines etc. </p>
+
+	
+
+	<p class="lead"> In my infrastructure I use node exporters for my bare-metal nodes, nodejs exporter for one of the apps and for the kubernetes cluster running inside of the VirtualBox vms. The consumer of the metrics is Grafana.  </p>
+
+
+	<p class="lead"> Prometheus instances are added as data sources in grafana </p> 
+        <img class="img-fluid rounded" src="prom_ds.png" style="width:1000px;height:500px;" alt="">
+
+
+        <hr>
+
+         
+
+	<img class="img-fluid rounded" src="prometheus-node-exporter1.png" style="width:500px;height:200px;" alt="">
+	
+	
+	<img class="img-fluid rounded" src="prometheus-node-exporter2.png" style="width:500px;height:600px;" alt="">
+	
+	<hr> 
+
+	<p class="lead"> Kubernetes has its own prometheus instance running inside of the cluster and is added as another data source to grafana.  </p>
+
+	<img class="img-fluid rounded" src="kubeprometheus.png" style="width:1000px;height:500px;" alt="">
+	
+        <hr>
+        
+        <p class="lead"> Prometheus targets may be observed through NodePort export to external ips of Nodes. </p>
+
+
+	<img class="img-fluid rounded" src="kubeprometheus2.png" style="width:1000px;height:500px;" alt="">
+        <hr>
+        <p class="lead"> Grafana dashboard shows the kubernetes statistics.  </p>
+
+
+        <img class="img-fluid rounded" src="kubegrafana.png" style="width:1000px;height:500px;" alt="">
+
+
+        <hr>
+
+        <!-- Post Content -->
+        <hr>
+
+
+
+</div>
+</div>
+</div>
+<%- include('./partials/_footer'); %>
+</body>
+<%- include('./partials/_end'); %>

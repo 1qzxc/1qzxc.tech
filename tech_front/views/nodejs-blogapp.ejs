@@ -1,0 +1,82 @@
+<%- include('./partials/_head'); %>
+  <body class="d-flex flex-column min-vh-100">
+  <%- include('./partials/_nav'); %>
+
+
+<!-- Page Content -->
+  <div class="container">
+        
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4"> Nodejs blogging app </h1>
+
+
+        <!-- Author -->
+
+	<h2><a href="http://blog.morozovme.com/"> Go to the app </a></h2>
+	<hr>
+	<h4><a href="https://github.com/morozovme/programming/tree/main/js/nodejs_blogapp">See the Repository</a></h4>
+
+        <hr>
+
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="nodejs_blogapp.png" alt="">
+        <!-- Post Content -->
+        <hr>
+	<p class="lead"> This project has evolved from a job interview task, where I had to implement hello world app that may be containerized and deployed to a kubernetes along with metrics. App includes: </p>
+
+        <ul>
+		<li> server.js is an entrypoint that has an export enpoint available at /metrics for prometheus </li>
+		<li> Dockerfile for app dockerization </li>
+		<li> Dockerfile has a healthcheck of an app for kubernetes </li>
+		<li> test folder contains mocha helloworld test for CI </li>
+		<li> docker-compose.yml that brings up prometheus and grafana containers along with the container for the app itself. </li>
+		<li> prometheus.yml configuration file </li>
+		<li> grafana folder with mountpoints and a dashboard </li>
+		<li> public/ folder with bootstrap and other assets </li>
+		<li> deployment-kube.yml for app deployment to a kuberenetes cluster or minikube </li>
+
+	</ul>
+
+
+
+        <hr>
+
+        <p class="lead"> The app is being built after a commit is pushed to a Github repo. Webhook is issued to the Jenkins instance. </p>
+	<img class="img-fluid rounded" src="nodejs_blogapp_webhook.png" alt="">
+
+
+
+        <hr>
+
+
+	<p class="lead"> Jenkins runs an item "nodejs_blogapp" that runs a helloworld mocha test and triggers another item "deploy_nodejs_blogapp" that ssh'es to the baremetal machine using a preinstalled key and issues git pull and rebuilds the docker image. </p>
+
+       <img class="img-fluid rounded" src="jenkins-pipeline.png" alt="">
+
+       <hr>
+
+        <img class="img-fluid rounded" src="jenkins_deploy_nodejs_blogapp.png" alt="">
+
+      	<hr>
+        <img class="img-fluid rounded" src="nodejs_build_script.png" alt="">
+
+        <hr>
+
+
+        <p class="lead"> The script filters the container ID by the tag name and removes it. New one is built instead. The connections are handled by the <a href="/rvproxy"> reverse proxy </a></p>
+
+        <hr>
+<br>
+
+</div>
+</div>
+</div>
+<%- include('./partials/_footer'); %>
+</body>
+<%- include('./partials/_end'); %>

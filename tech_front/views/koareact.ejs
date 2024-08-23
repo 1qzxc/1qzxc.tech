@@ -1,0 +1,131 @@
+<%- include('./partials/_head'); %>
+  <body class="d-flex flex-column min-vh-100">
+  <%- include('./partials/_nav'); %>
+
+
+<!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+        <h1 class="mt-4"> Koa postgres react nodejs to do app </h1>
+
+
+        <!-- Author -->
+
+	<h2><a href="http://koareact.morozovme.com/"> Go to the app </a></h2>
+	<hr>
+	<h4><a href="http://github.com/mikefrostov/koa_app2">See the Repository</a></h4>
+
+        <hr>
+
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="koareact.png" style="width:700px;height:400px;" alt="">
+        <!-- Post Content -->
+        <hr>
+	<p class="lead"> This project is a job interview task where I had to implement a sort of a to-do CRUD app using only koa modules, postgres and react. Even though the project is rather simple and straight forward, it took me about a week and a half to figure out all the bits and pieces. I took other people's work as a starting point, since I had no previous experience using these technologies or prior experience in building REST api at all, especially using JavaScript and its frameworks. </p>
+
+	
+	<p class="lead"> A very helpful nodejs module is nodemon. What it does, it basically reloads the server each time the code is changed (not always though, sometimes I had to reload it manually cuz of changes in server.js, nevertheless it is helpful in all other instances) </p>
+
+	
+        <img class="img-fluid rounded" src="npmwatch.png" style="width:700px;height:600px;" alt="">
+        <hr>
+        <p class="lead"> For troubleshooting the REST API of my app I had to use POSTMAN at some point. It is very helpful and flexible, you can tailor the request easily to see the behavior of the REST API server. </p>
+
+	<img class="img-fluid rounded" src="postman.png" style="width:700px;height:400px;" alt="">
+
+	<p class="lead">  </p>
+	
+	
+	
+     <p class="lead"> Main references are: </p>
+    <ul>
+      <li> https://medium.com/@olinations/build-a-crud-template-using-react-bootstrap-express-postgres-9f84cc444438 </li>
+      <li> https://medium.com/hackernoon/serving-react-and-koa-together-720ba6668298 </li>
+      <li> https://www.youtube.com/watch?v=o7gVHMg_jdY </li>
+    </ul>
+  <p class="lead"> I am very grateful to these guys. They really helped me to get up to speed with all this modern JavaScript magic, I loved it. </p>
+    <p class="lead">These are not the only places that I used as a reference. I scavanged across multitude of sources before I understood how it is done.</p>
+
+
+
+        <p class="lead"> The trello cards really got some beating, each comment here contains a link to some article about react, koa or misc problems. </p>
+        <img class="img-fluid rounded" src="reference1.png" alt="">
+<hr>
+        <p class="lead"> I had to figure out migrations, React Components, koa router, koa mounts and how to build a react project, serve it statically after build. CORS (had no idea what that was before), koa-routes etc, etc... This was a great experience, I learned a lot, this stuff is now clear to me.
+
+
+        <hr>
+
+<br>
+<br>
+
+<p class="lead"> Full reference for the stuff I had to go through: </p>
+<ul>
+  <li> https://hackernoon.com/dont-install-postgres-docker-pull-postgres-bee20e200198 </li>
+  <li> https://www.youtube.com/watch?v=xpfgkIl8oDU </li>
+  <li> https://www.youtube.com/watch?v=ufdHsFClAk0 </li>
+  <li> https://www.youtube.com/watch?v=z84uTk5zmak </li>
+  <li> https://koajs.com/ </li>
+  <li> https://github.com/db-migrate/node-db-migrate/blob/master/lib/interface/seederInterface.js#L1-L36 </li>
+  <li> https://medium.com/jtribe/node-js-in-2018-full-stack-tutorial-with-koa-react-redux-sagas-and-mongodb-14a7efaee4d4 </li>
+  <li> https://mherman.org/blog/building-a-restful-api-with-koa-and-postgres/ </li>
+  <li> https://github.com/db-migrate/node-db-migrate/issues/292 </li>
+  <li> https://medium.com/hackernoon/serving-react-and-koa-together-720ba6668298 </li>
+  <li> https://www.youtube.com/watch?v=WT67-OETeGU </li>
+  <li> https://github.com/matthew-andrews/isomorphic-fetch/issues/34 </li>
+  <li> https://medium.com/@olinations/build-a-crud-template-using-react-bootstrap-express-postgres-9f84cc444438 </li>
+  <li>https://restfulapi.net/rest-put-vs-post/</li>
+  <li>https://programmer.group/collation-of-common-knowledge-points-in-koa-framework.html</li>
+  <li>https://levelup.gitconnected.com/react-crud-app-without-and-with-redux-da4cd87f2eab</li>
+  <li>https://thinkster.io/tutorials/react-redux-crud-api</li>
+  <li>https://youtu.be/nfIEDzMJCQo</li>
+  <li>https://medium.com/jtribe/node-js-in-2018-full-stack-tutorial-with-koa-react-redux-sagas-and-mongodb-14a7efaee4d4</li>
+  <li>https://github.com/brianc/node-pg-pool</li>
+  <li>https://medium.com/hackernoon/serving-react-and-koa-together-720ba6668298</li>
+  <li>https://github.com/db-migrate/node-db-migrate/blob/master/lib/interface/seederInterface.js#L1-L36</li>
+  <li>https://www.freecodecamp.org/news/demystifying-reacts-server-side-render-de335d408fe4/</li>
+  <li>https://blog.logrocket.com/why-you-should-render-react-on-the-server-side-a50507163b79/</li>
+  <li>https://www.sitepoint.com/asynchronous-apis-server-rendered-react/</li>
+  <li>https://medium.com/@evheniybystrov/full-stack-react-app-from-scratch-part-2-classic-rest-api-b0279bdd8d24</li>
+  <li>https://pusher.com/tutorials/consume-restful-api-react</li>
+  <li>https://dev.to/oktadev/build-a-simple-crud-app-with-python-flask-and-react-30k5</li>
+  <li>https://www.valentinog.com/blog/drf/</li>
+  <li>https://mherman.org/blog/building-a-restful-api-with-koa-and-postgres/</li>
+  <li>https://www.mfosullivan.com/rest-api-node-koa-postgresql/</li>
+  <li>https://habr.com/ru/post/307148/</li>
+  <li>https://habr.com/ru/post/310302/</li>
+  <li>https://www.youtube.com/watch?v=0eGA1zYvyeU</li>
+  <li>https://github.com/koajs/koa</li>
+  <li>https://www.youtube.com/watch?v=z84uTk5zmak</li>
+  <li>https://medium.com/hackernoon/serving-react-and-koa-together-720ba6668298</li>
+  <li>https://blog.logrocket.com/setting-up-a-restful-api-with-node-js-and-postgresql-d96d6fc892d8/</li>
+  <li>https://mherman.org/blog/postgresql-and-nodejs/</li>
+  <li>https://github.com/danneu/koa-skeleton</li>
+  <li>https://mherman.org/blog/building-a-restful-api-with-koa-and-postgres/</li>
+  <li>https://www.mfosullivan.com/rest-api-node-koa-postgresql/</li>
+  <li>https://linuxhint.com/postgresql-nodejs-tutorial/</li>
+  <li>https://node-postgres.com/features/pooling</li>
+  <li>http://zetcode.com/javascript/nodepostgres/</li>
+  <li>https://stackoverflow.com/questions/3582552/postgresql-connection-url</li>
+  <li>https://mherman.org/blog/building-a-restful-api-with-koa-and-postgres/</li>
+  <li>https://github.com/koajs/examples</li>
+  <li>https://github.com/koajs/koa/wiki</li>
+  <li>https://kir9819.github.io/Docs/docs/[en]node_koa_postgre/</li>
+  <li>https://hackernoon.com/dont-install-postgres-docker-pull-postgres-bee20e200198</li>
+  <li>https://github.com/salsita/node-pg-migrate</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<%- include('./partials/_footer'); %>
+</body>
+<%- include('./partials/_end'); %>

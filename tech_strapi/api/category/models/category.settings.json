@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "category",
+  "info": {
+    "name": "category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "default": "name"
+    },
+    "articles": {
+      "collection": "article",
+      "via": "categories",
+      "dominant": true
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<%- include('./partials/_head'); %>
+  <body>
+    <%- include('./partials/_nav'); %>
+  
+    <div class="container">
+    <div class="row">
+    <div class="col-lg-8">
+    <br>
+    <h2> <%= entity %> </h2>
+    <hr>
+    <br>
+
+    <!--  for each category show all projects with this category   -->
+
+    <!--  category name -->
+<h3> category.name </h3>
+<div class="list-group">
+
+  <!-- for each project in this category show all data -->
+
+
+  <a href="article.url" class="list-group-item">
+  <h4 class="list-group-item-heading"> article.title </h4>
+    <p class="list-group-item-text"> article.description </p>
+  </a>
+
+ </div>
+
+<br>
+<hr>
+<%- include('./partials/_footer'); %>
+</body>
+<%- include('./partials/_end'); %>

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Study projects</title>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+</head>
+<body>
+<div>
+<div>
+<nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+       <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Personal Blog<span class="sr-only">(current)</span></a></li>
+      <li><a href="/projects">Projects</a></li>
+      <li><a href="/videos">Videos</a></li>
+      <li><a href="/articles">Articles</a></li>
+      <li><a href="/mentorship">Mentorship</a></li>
+      <li><a href="/about">About</a></li>
+    </ul>
+</nav>
+</div>
+<br/>
+<div class="container">
+<div class="row">
+<div class="col-lg-8">
+<h2> Posts </h2>
+<hr>
+<h3> Post 1 </h3>
+<p> holds video or link from VK</p>
+<br>
+<hr>
+<br>
+<h3> Post 2 </h3>
+<p> Holds a photo from instagram </p>
+<br>
+<hr>
+<br>
+<h3> Post 3 </h3>
+<p> Holds a post from facebook </p>
+<br>
+<hr>
+<br>
+<h3> Post 4 </h3>
+<p> Holds a post from group </p>
+<br>
+<hr>
+<br>
+<h3> Post 4 </h3>
+<p> Holds a post from group </p>
+<br>
+<hr>
+<br>
+<br>
+<h2> Comment zone </h2>
+<p>OAuth gmail/facebook/vk/instagram login and commenting</p>
+<p>or</p>
+<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Example textarea</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<br>
+<hr>
+</body>
+</html>
+
+
+<!-- 
+examples of ejs 
+
+Variables are declared using angle brackets and the percent sign in this manner: <%= name %>.
+
+
+
+
+<%/* <%= – Escape the provided value, and output it to the template %> */%>
+<%/* <%- – Output the provided value without escaping. It is advised you escape all HTML variables before rendering to prevent cross-site scripting (XSS) attacks %> */%>
+<%/* <% – Perform control operations such as using a conditional or loop %> */%>
+-->

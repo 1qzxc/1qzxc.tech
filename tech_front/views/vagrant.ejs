@@ -1,0 +1,47 @@
+<%- include('./partials/_head'); %>
+  <body class="d-flex flex-column min-vh-100">
+  <%- include('./partials/_nav'); %>
+
+
+
+
+<!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Post Content Column -->
+      <div class="col-lg-8">
+
+        <!-- Title -->
+	<h1 class="mt-4"> Vagrant </h1>
+        <hr>
+
+        <!-- Author -->
+        <p class="lead"> Vagrant is an amazing technology by HashiCorp. It lets you imperatively create vritual machines for your projects. Essentially it is a part of Infrastructure as a Code approach, where you write Vagrantfile with specifics about virtual machine and Vagrant boots the machine up and "provisions" it with ansible or just plain bash scripts. I really had a blast using it. In a matter of minutes I could bring up any product and play with it. </p>
+
+
+        <!-- Preview Image -->
+        <img class="img-fluid rounded" src="vagrant.png" alt="">
+
+        <hr>
+
+        <!-- Post Content -->
+        <p class="lead"> Although Vagrant documentation is pretty straight forward, there are some pitfalls that you might need to overcome. Depending on the virtualization provider, there are some specific options that you need to handle.</p>
+
+	<p class="lead"> I have created a repository specifically for kubernetes deployment in virtualbox environment using ansible playbooks. I try to keep it working throughout the kubernetes releases. </p>
+
+        <hr>
+
+
+
+
+      </div>
+    </div>
+    </div>
+    
+            <%- include('./partials/_footer'); %>
+          </body>
+          <%- include('./partials/_end'); %>
+          
+          
