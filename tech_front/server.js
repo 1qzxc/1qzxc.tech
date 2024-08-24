@@ -39,6 +39,15 @@ async function getCategories() {
   return data
 }
 
+async function getProjects() {
+  const response1 = await fetch(`http://strapimain:1337/projects`);
+  const data = await response1.json();
+  //console.log(data);
+  //console.log(data[0].pictures);
+  return data
+}
+
+
 app.get('/', (request, response) =>  {
 
   response.render('projects', {
@@ -51,17 +60,22 @@ app.get('/', (request, response) =>  {
 
 });
 
-app.get('/projects2', (request, response) =>  {
+app.get('/projects2', async function (request, response, next)  {
+
+  var categories = await getCategories();
+
+  var projects = await getProjects();
 
   response.render('projects2', {
     subject: 'Study projects2',
     entity: 'Study projects2',
     link: 'https://google.com',
-    focus: 'projects2'
+    focus: 'projects2',
+    categories: categories,
+    projects: projects
   });
-
-
 });
+
 
 app.get('/articles', async function (request, response, next)  {
 
