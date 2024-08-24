@@ -45,6 +45,9 @@ services:
       - strapi-main-network
     ports:
       - "8084:8084"
+    volumes:
+      - ./tech_front:/usr/src/app2
+#      - /usr/src/app/node_modules
 
 networks:
   strapi-main-network:
