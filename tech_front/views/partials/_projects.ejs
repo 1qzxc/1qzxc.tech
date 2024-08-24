@@ -11,7 +11,7 @@
       <div class="list-group">
       <% category.projects.forEach(function(project) { %>
         <br>
-        <a href="project.url" class="list-group-item">
+        <a href="<%= fronthostname + '/projects2/' + project.id %>" class="list-group-item">
         <h4 class="list-group-item-heading"> <%= project.title %> </h4>
         <p class="list-group-item-text"> <%= project.description %> </p>
         </a>

@@ -1,0 +1,32 @@
+<div class="col-lg-8">
+    <!-- Post content -->
+    <article>
+    <!-- Post header-->
+    <header class="mb-4">
+    <!-- Post title-->
+    <h1 class="fw-bolder mb-1"><%= project.title %></h1>
+    <!-- Post meta content-->
+    <div class="text-muted fst-italic mb-2"><%= project.date %></div>
+    <!-- Post categories-->
+    
+
+
+    </header>
+    <!-- Post content-->
+    <!-- <li> -->
+    
+    <!-- Preview image figure-->
+    <% project.media.forEach(function(picture) { %>
+    <div class="col-md-4 mt-3 col-lg-4">
+        <figure class="shadow-lg p-3 mb-5 bg-body rounded"><img class="img-fluid rounded " src="<%= hostname + picture.url%>"></figure>
+    </div>
+    <% }); %>
+    
+    <section class="mb-5">
+    <p class="fs-5 mb-4"><%= project.text %></p>
+  
+    </section>
+    <!-- </li> -->
+    </article>
+  </div>
+  

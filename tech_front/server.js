@@ -47,6 +47,14 @@ async function getProjects() {
   return data
 }
 
+async function getProject(id) {
+  const response1 = await fetch(`http://strapimain:1337/projects/`+ id);
+  const data = await response1.json();
+  //console.log(data);
+  //console.log(data[0].pictures);
+  return data
+}
+
 
 app.get('/', (request, response) =>  {
 
@@ -288,14 +296,32 @@ app.use("/",router); // <--- binging middleware, sets root path for 'app' and us
 
 
 
-router.get("/*",function(req,res){
-  res.sendFile(path + "404.html");
+//router.get("/*",function(req,res){
+//  res.sendFile(path + "404.html");
+//});
+
+router.get('/projects2/:id', async function (request, response, next)  {
+  id = "66c9dd859933bf010f0442aa"
+  console.log("id is: ")
+  console.log(id)
+  var project = await getProject(id);
+
+  response.render('project', {
+    subject: 'Study projects2',
+    entity: 'Study projects2',
+    link: 'https://google.com',
+    focus: 'projects2',
+    id: id,
+    project: project
+  });
 });
 
-app.use("*",function(req,res){
-  res.sendFile(path + "404.html");
-});
+
+//app.use("*",function(req,res){
+//  res.sendFile(path + "404.html");
+//});
 
 app.listen(8084,function(){
   console.log("Live at Port 8084");
 });
+
