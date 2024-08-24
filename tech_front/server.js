@@ -5,6 +5,8 @@ const path = __dirname + '/views/';
 const request = require('request');
 const fetch = require('cross-fetch');
 
+const hostname = require('./config.js');
+console.log(" const hostname = " + hostname);
 
 //const path = require('path');
 
