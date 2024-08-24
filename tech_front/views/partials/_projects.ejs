@@ -3,34 +3,21 @@
     <h2> <%= entity %> </h2>
     <hr>
     <br>
-
-    <!--  for each category show all projects with this category   -->
-
-    <!--  category name -->
-
-    <!-- for each category -->
+    
+    <div class="list-group">
     <% categories.forEach(function(category) { %>
-      <li><a href="#!"><%= category.name %> </a></li>
+      <br>
+      <h3><%= category.name %> </h3>
+      <div class="list-group">
+      <% category.projects.forEach(function(project) { %>
+        <br>
+        <a href="project.url" class="list-group-item">
+        <h4 class="list-group-item-heading"> <%= project.title %> </h4>
+        <p class="list-group-item-text"> <%= project.description %> </p>
+        </a>
+
+      <% }); %>
+      </div>
     <% }); %>
-     <!-- category,name 
-      for each project 
-      oroject.title 
-      -->
-
-
-
-<h3> category.name </h3>
-<div class="list-group">
-
-  <!-- for each project in this category show all data -->
-
-
-  <a href="project.url" class="list-group-item">
-  <h4 class="list-group-item-heading"> project.title </h4>
-    <p class="list-group-item-text"> project.description </p>
-  </a>
-
- </div>
-
 <br>
 <hr>
