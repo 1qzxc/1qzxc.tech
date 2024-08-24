@@ -41,11 +41,23 @@ async function getCategories() {
 
 app.get('/', (request, response) =>  {
 
-  response.render('pet', {
+  response.render('projects', {
     subject: 'Study projects',
     entity: 'Study projects',
     link: 'https://google.com',
-    focus: 'pet'
+    focus: 'projects'
+  });
+
+
+});
+
+app.get('/projects2', (request, response) =>  {
+
+  response.render('projects2', {
+    subject: 'Study projects2',
+    entity: 'Study projects2',
+    link: 'https://google.com',
+    focus: 'projects2'
   });
 
 
@@ -95,7 +107,7 @@ app.get('/ansible', (request, response) => {
   response.render('ansible', {
     subject: 'ansible',
     entity: 'ansible',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -103,7 +115,7 @@ app.get('/nodejs-blogapp', (request, response) => {
   response.render('nodejs-blogapp', {
     subject: 'blogapp',
     entity: 'blogapp',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -112,7 +124,7 @@ app.get('/python-flask', (request, response) => {
   response.render('python-flask', {
     subject: 'flask',
     entity: 'flask',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -120,7 +132,7 @@ app.get('/sitik', (request, response) => {
   response.render('sitik', {
     subject: 'sitik',
     entity: 'sitik',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -128,7 +140,7 @@ app.get('/koareact', (request, response) => {
   response.render('koareact', {
     subject: 'koareact',
     entity: 'koareact',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -136,7 +148,7 @@ app.get('/jquery', (request, response) => {
   response.render('jquery', {
     subject: 'jquery',
     entity: 'jquery',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -144,7 +156,7 @@ app.get('/jenkins', (request, response) => {
   response.render('jenkins', {
     subject: 'jenkins',
     entity: 'jenkins',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -153,7 +165,7 @@ app.get('/grafana', (request, response) => {
   response.render('grafana', {
     subject: 'grafana',
     entity: 'grafana',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -161,7 +173,7 @@ app.get('/prometheus', (request, response) => {
   response.render('prometheus', {
     subject: 'prometheus',
     entity: 'prometheus',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -170,7 +182,7 @@ app.get('/home-lab', (request, response) => {
   response.render('home-lab', {
     subject: 'home-lab',
     entity: 'home-lab',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -179,7 +191,7 @@ app.get('/rvproxy', (request, response) => {
   response.render('rvproxy', {
     subject: 'rvproxy',
     entity: 'rvproxy',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -187,7 +199,7 @@ app.get('/kubernetes', (request, response) => {
   response.render('kubernetes', {
     subject: 'kubernetes',
     entity: 'kubernetes',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -195,7 +207,7 @@ app.get('/docker', (request, response) => {
   response.render('docker', {
     subject: 'docker',
     entity: 'docker',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -203,7 +215,7 @@ app.get('/vagrant', (request, response) => {
   response.render('vagrant', {
     subject: 'vagrant',
     entity: 'vagrant',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -211,7 +223,7 @@ app.get('/postgres', (request, response) => {
   response.render('postgres', {
     subject: 'postgres',
     entity: 'postgres',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -219,7 +231,7 @@ app.get('/python-linked', (request, response) => {
   response.render('python-linked', {
     subject: 'python-linked',
     entity: 'python-linked',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -227,7 +239,7 @@ app.get('/l2j', (request, response) => {
   response.render('l2j', {
     subject: 'l2j',
     entity: 'l2j',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -235,7 +247,7 @@ app.get('/gitlab', (request, response) => {
   response.render('gitlab', {
     subject: 'gitlab',
     entity: 'gitlab',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
@@ -243,7 +255,7 @@ app.get('/strapi', (request, response) => {
   response.render('strapi', {
     subject: 'strapi',
     entity: 'strapi',
-    focus: 'pet'
+    focus: 'projects'
   });
 });
 
