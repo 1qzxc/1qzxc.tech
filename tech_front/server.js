@@ -301,17 +301,19 @@ app.use("/",router); // <--- binging middleware, sets root path for 'app' and us
 //});
 
 router.get('/projects2/:id', async function (request, response, next)  {
-  id = "66c9dd859933bf010f0442aa"
-  console.log("id is: ")
-  console.log(id)
-  var project = await getProject(id);
+  //id = request.id
+
+  console.log("request.params.id is: ")
+  console.log(request.params.id)
+
+  var project = await getProject(request.params.id);
 
   response.render('project', {
     subject: 'Study projects2',
     entity: 'Study projects2',
     link: 'https://google.com',
     focus: 'projects2',
-    id: id,
+    id: request.params.id,
     project: project
   });
 });
