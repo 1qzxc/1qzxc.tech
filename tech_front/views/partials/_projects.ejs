@@ -4,7 +4,8 @@
       <h3><%= category.name %> </h3>
       <div class="list-group">
       <% category.projects.forEach(function(project) { %>
-        <a href="<%= fronthostname + '/projects2/' + project.id %>" class="list-group-item">
+        <a class="<%= 1==2 ? 'active' : '' %>" href="#"></a>
+        <a href="<%= fronthostname + '/projects2/' + project.id %>" class="list-group-item <%= project.done == false ? 'disabled' : '' %>">
         <h4 class="list-group-item-heading"> <%= project.title %> </h4>
         <p class="list-group-item-text"> <%= project.description %> </p>
         </a>
