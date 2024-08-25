@@ -36,6 +36,9 @@
     "text": {
       "type": "richtext",
       "default": "text"
+    },
+    "done": {
+      "type": "boolean"
     }
   }
 }
