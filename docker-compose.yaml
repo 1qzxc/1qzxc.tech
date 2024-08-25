@@ -18,7 +18,8 @@ services:
     #      - mongo:mongo
     networks:
       - strapi-main-network
-    #volumes:
+    volumes:
+      - ./tech_strapi:/src/app2
       #- ./app:/srv/app
     ports:
       - "1338:1337"
@@ -47,6 +48,7 @@ services:
       - "8084:8084"
     volumes:
       - ./tech_front:/usr/src/app2
+      - ./tech_strapi:/usr/src/app2/tech_strapi
 #      - /usr/src/app/node_modules
 
 networks:

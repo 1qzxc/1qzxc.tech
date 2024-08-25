@@ -38,6 +38,11 @@ COPY . .
 
 RUN yarn install
 
+# try host mount folder
+WORKDIR /src/app2
+RUN yarn install
+
 EXPOSE 1337
 #CMD [ "sleep", "10000" ]
+#CMD [ "yarn", "install" ]
 CMD yarn develop

@@ -20,6 +20,10 @@
       "collection": "article",
       "via": "categories",
       "dominant": true
+    },
+    "projects": {
+      "via": "categories",
+      "collection": "project"
     }
   }
 }
