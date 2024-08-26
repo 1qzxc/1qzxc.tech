@@ -6,7 +6,7 @@ server {
 
     # Proxy Config
     location / {
-        proxy_pass http://192.168.1.136:8084;
+        proxy_pass http://192.168.1.9:8084;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -20,7 +20,7 @@ server {
 
     # Proxy Config
     location /uploads {
-        proxy_pass http://192.168.1.136:1338;
+        proxy_pass http://192.168.1.9:1338;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -33,7 +33,7 @@ server {
     }
 
     location /admin {
-        proxy_pass http://192.168.1.136:1338;
+        proxy_pass http://192.168.1.9:1338;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -46,7 +46,7 @@ server {
     }
 
     location /content-manager {
-        proxy_pass http://192.168.1.136:1338;
+        proxy_pass http://192.168.1.9:1338;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -59,7 +59,7 @@ server {
     }
 
     location /i18n {
-        proxy_pass http://192.168.1.136:1338;
+        proxy_pass http://192.168.1.9:1338;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -72,7 +72,7 @@ server {
     }
 
     location /api {
-        proxy_pass http://192.168.1.136:1338;
+        proxy_pass http://192.168.1.9:1338;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

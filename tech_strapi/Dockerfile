@@ -30,13 +30,14 @@ ENV PATH $NODE_PATH:$PATH
 RUN npm install --global yarn
 RUN yarn --version
 RUN yarn global add strapi@3.6.8
+
 #SHELL ["/bin/bash", "--login", "-c"]
 
-WORKDIR /src/app
+#WORKDIR /src/app
 
-COPY . .
+#COPY . .
 
-RUN yarn install
+#RUN yarn install
 
 # try host mount folder
 WORKDIR /src/app2
