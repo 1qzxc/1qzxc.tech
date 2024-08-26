@@ -48,7 +48,6 @@ services:
       - "8084:8084"
     volumes:
       - ./tech_front:/usr/src/app2
-      - ./tech_strapi:/usr/src/app2/tech_strapi
 #      - /usr/src/app/node_modules
 
 networks:
