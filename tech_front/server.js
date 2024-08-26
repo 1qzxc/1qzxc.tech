@@ -303,10 +303,12 @@ app.use("/",router); // <--- binging middleware, sets root path for 'app' and us
 router.get('/projects2/:id', async function (request, response, next)  {
   //id = request.id
 
-  console.log("request.params.id is: ")
-  console.log(request.params.id)
+  console.log("request.params.id is: ");
+  console.log(request.params.id);
 
   var project = await getProject(request.params.id);
+  const md = require("markdown-it")({ html: true });
+  const html = md.render(project.text);
 
   response.render('project', {
     subject: 'Study projects2',
@@ -314,6 +316,10 @@ router.get('/projects2/:id', async function (request, response, next)  {
     link: 'https://google.com',
     focus: 'projects2',
     id: request.params.id,
+    title: project.title,
+    date: project.date,
+    text: project.text,
+    html: html,
     project: project
   });
 });

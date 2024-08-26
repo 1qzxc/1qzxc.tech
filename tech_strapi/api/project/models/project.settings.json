@@ -39,6 +39,10 @@
     },
     "done": {
       "type": "boolean"
+    },
+    "date": {
+      "type": "datetime",
+      "default": "2024-08-26T19:00:00.000Z"
     }
   }
 }
