@@ -307,7 +307,14 @@ router.get('/projects2/:id', async function (request, response, next)  {
   console.log(request.params.id);
 
   var project = await getProject(request.params.id);
-  const md = require("markdown-it")({ html: true });
+  const markdownItClass = require('markdown-it-class');
+  const md = require("markdown-it")({ html: true }).use(markdownItClass, {
+    h1: ['text-2xl', 'font-bold', 'mb-3', 'text-blue-700'],
+    p: ['fs-5', 'mb-4'],
+    img: ['img-fluid', 'rounded', 'shadow-lg','p-3', 'mb-5','bg-body']
+  });
+
+
   const html = md.render(project.text);
 
   response.render('project', {

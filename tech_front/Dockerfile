@@ -14,7 +14,7 @@ FROM node:8
 RUN mkdir -p /usr/src/app2
 WORKDIR /usr/src/app2
 RUN npm install
-RUN npm i ejs express gray-matter markdown-it --save
+RUN npm i ejs express gray-matter markdown-it markdown-it-class --save
 
 EXPOSE 8084
 CMD [ "npm", "start" ]
