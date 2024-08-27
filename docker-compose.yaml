@@ -50,6 +50,14 @@ services:
       - ./tech_front:/usr/src/app2
 #      - /usr/src/app/node_modules
 
+  nginx:
+    build: nginx/.
+    container_name: nginx
+    networks:
+      - strapi-main-network
+    ports:
+      - "8088:80"
+
 networks:
   strapi-main-network:
     driver: bridge
