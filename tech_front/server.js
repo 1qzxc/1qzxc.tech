@@ -55,6 +55,14 @@ async function getProject(id) {
   return data
 }
 
+async function getArticle(id) {
+  const response1 = await fetch(`http://strapimain:1337/articles/`+ id);
+  const data = await response1.json();
+  //console.log(data);
+  //console.log(data[0].pictures);
+  return data
+}
+
 
 app.get('/', async function (request, response, next)  {
 
@@ -85,6 +93,7 @@ app.get('/articles', async function (request, response, next)  {
     link: 'https://google.com',
     focus: 'articles',
     articles: articles, /* pass posts from database */
+    //html: html,
     categories: categories
   });
 });
@@ -312,6 +321,39 @@ router.get('/:id', async function (request, response, next)  {
     project: project
   });
 });
+
+
+router.get('/article/:id', async function (request, response, next)  {
+  //id = request.id
+
+  console.log("request.params.id is: ");
+  console.log(request.params.id);
+
+  var article = await getArticle(request.params.id);
+  const markdownItClass = require('markdown-it-class');
+  const md = require("markdown-it")({ html: true }).use(markdownItClass, {
+    h1: ['text-2xl', 'font-bold', 'mb-3', 'text-blue-700'],
+    p: ['fs-5', 'mb-4'],
+    img: ['img-fluid', 'rounded', 'shadow-lg','p-3', 'mb-5','bg-body']
+  });
+
+
+  const html = md.render(article.text);
+
+  response.render('article', {
+    subject: 'article',
+    entity: 'article',
+    link: 'https://google.com',
+    focus: 'articles',
+    id: request.params.id,
+    title: article.title,
+    date: article.date,
+    text: article.text,
+    html: html,
+    article: article
+  });
+});
+
 
 
 //app.use("*",function(req,res){

@@ -3,39 +3,35 @@
 <!-- Page content-->
 <!-- <ul> -->
 
-    <div class="col-lg-8">
+    
+      <div class="col-lg-8">
         <% articles.forEach(function(article) { %>
-        <!-- Post content -->
-        <article>
-        <!-- Post header-->
-        <header class="mb-4">
-        <!-- Post title-->
-        <h1 class="fw-bolder mb-1"><%= article.title %></h1>
-        <!-- Post meta content-->
-        <div class="text-muted fst-italic mb-2"><%= article.date %></div>
-        <!-- Post categories-->
-        
 
+        <a href="<%= fronthostname + '/article/' + article.id %>" class="list-group-item">
+        <article>
+
+        <header class="mb-4">
+
+        <h1 class="fw-bolder mb-1"><%= article.title %></h1>
+
+        <div class="text-muted fst-italic mb-2"><%= article.date %></div>
 
         </header>
-        <!-- Post content-->
-        <!-- <li> -->
-        
-        <!-- Preview image figure-->
-        
-          <div >
-            <figure class="shadow-lg p-3 mb-5 bg-body rounded"><img class="img-fluid rounded " src="<%= hostname + article.picture.url %>"></figure>
-          </div>
-        
-        <section class="mb-5">
-        <p class="fs-5 mb-4"><%= article.text %></p>
-      
-        </section>
+        <div >
+          <figure class="shadow-lg p-3 mb-5 bg-body rounded"><img class="img-fluid rounded " src="<%= hostname + article.picture.url %>">
+            <br>
+            <br>
+            <div class="text-muted fs-5 mb-4"><%= article.preamble %></div>
+            <br>
+            <br>
+          </figure>
+          
+        </div>
         <!-- </li> -->
         </article>
+        </a>
         <% }); %>
       </div>
       
 
-<!--   </ul> -->
 
