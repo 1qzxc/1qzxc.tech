@@ -56,29 +56,17 @@ async function getProject(id) {
 }
 
 
-app.get('/', (request, response) =>  {
-
-  response.render('projects', {
-    subject: 'Study projects',
-    entity: 'Study projects',
-    link: 'https://google.com',
-    focus: 'projects'
-  });
-
-
-});
-
-app.get('/projects2', async function (request, response, next)  {
+app.get('/', async function (request, response, next)  {
 
   var categories = await getCategories();
 
   var projects = await getProjects();
 
-  response.render('projects2', {
-    subject: 'Study projects2',
-    entity: 'Study projects2',
+  response.render('projects', {
+    subject: 'Study projects',
+    entity: 'Study projects',
     link: 'https://google.com',
-    focus: 'projects2',
+    focus: 'projects',
     categories: categories,
     projects: projects
   });
@@ -294,7 +282,7 @@ app.use("/",router); // <--- binging middleware, sets root path for 'app' and us
 //  res.sendFile(path + "404.html");
 //});
 
-router.get('/projects2/:id', async function (request, response, next)  {
+router.get('/:id', async function (request, response, next)  {
   //id = request.id
 
   console.log("request.params.id is: ");
@@ -312,10 +300,10 @@ router.get('/projects2/:id', async function (request, response, next)  {
   const html = md.render(project.text);
 
   response.render('project', {
-    subject: 'Study projects2',
-    entity: 'Study projects2',
+    subject: 'Study projects',
+    entity: 'Study projects',
     link: 'https://google.com',
-    focus: 'projects2',
+    focus: 'projects',
     id: request.params.id,
     title: project.title,
     date: project.date,
