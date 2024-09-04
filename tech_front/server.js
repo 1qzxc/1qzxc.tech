@@ -63,6 +63,14 @@ async function getArticle(id) {
   return data
 }
 
+async function getCategory(id) {
+  const response1 = await fetch(`http://strapimain:1337/categories/`+ id);
+  const data = await response1.json();
+  //console.log(data);
+  //console.log(data[0].pictures);
+  return data
+}
+
 
 app.get('/', async function (request, response, next)  {
 
@@ -198,6 +206,25 @@ router.get('/article/:id', async function (request, response, next)  {
   });
 });
 
+
+router.get('/category/:id', async function (request, response, next)  {
+  //id = request.id
+
+  console.log("request.params.id is: ");
+  console.log(request.params.id);
+
+  var category = await getCategory(request.params.id);
+  //console.log(category)
+  //const html = md.render(article.text);
+
+  response.render('category', {
+    subject: 'category',
+    entity: 'category',
+    link: 'https://google.com',
+    focus: 'articles',
+    category: category
+  });
+});
 
 
 //app.use("*",function(req,res){

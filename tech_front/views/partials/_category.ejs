@@ -1,0 +1,38 @@
+<!-- rework with https://github.com/StartBootstrap/startbootstrap-blog-post/blob/master/src/pug/index.pug -->
+
+<!-- Page content-->
+<!-- <ul> -->
+      <div class="col-lg-8">
+        <% category.articles.forEach(function(article) { %>
+        <% if(category.articles){ %> 
+        <a href="<%= fronthostname + '/article/' + article.id %>" class="list-group-item">
+        <article>
+
+        <header class="mb-4">
+
+        <h1 class="fw-bolder mb-1"><%= article.title %></h1>
+
+        <div class="text-muted fst-italic mb-2"><%= article.date %></div>
+
+        </header>
+        <div >
+          <figure class="shadow-lg p-3 mb-5 bg-body rounded"><img class="img-fluid rounded " src="<%= hostname + article.picture.url %>">
+            <br>
+            <br>
+            <div class="text-muted fs-5 mb-4"><%= article.preamble %></div>
+            <br>
+            <br>
+          </figure>
+          
+        </div>
+        <!-- </li> -->
+        </article>
+        </a>
+        <% } else {  %>
+          <h1> empty </h1>
+        <% } %>
+        <% }); %>
+      </div>
+      
+
+

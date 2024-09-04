@@ -17,7 +17,9 @@
           <div class="col-sm-6">
             <ul class="list-unstyled mb-0">
             <% categories.forEach(function(category) { %>
-              <li><a href="#!"><%= category.name %> </a></li>
+              <% if (category.articles != 0) { %>
+              <li><a href="<%= fronthostname + '/category/' + category.id %>"><%= category.name %> </a></li>
+              <% }%>
             <% }); %>
             </ul>
           </div>
